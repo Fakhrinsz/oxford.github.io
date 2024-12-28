@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style form pendaftaran.css">
+    <title>Form Pendaftaran</title>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var confirmPasswordField = document.getElementById("confirm-password");
+            var showBtn = document.getElementById("show-password-btn");
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text"; 
+                confirmPasswordField.type = "text"; 
+                showBtn.innerHTML = "&#128065;"; 
+            } else {
+                passwordField.type = "password"; 
+                confirmPasswordField.type = "password"; 
+                showBtn.innerHTML = "&#128064;"; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <section class="container">
+        <header>Pendaftaran Mahasiswa Baru</header>
+        <form class="form" action="#">
+
+            <div class="input-box">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Masukan Nama Lengkap" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Masukan Email" required>
+            </div>
+            <br><label for="jurusan">Jurusan</label>
+            <div class="column">
+                <div class="select-box">
+                    <select name="Jurusan" required>
+                        <option hidden>Pilih Jurusan</option>
+                        <option>Teknologi Informasi (S1)</option>
+                        <option>Sistem Informasi (S1)</option>
+                        <option>Informatika (S1)</option>
+                        <option>Teknik Komputer (S1)</option>
+                        <option>Desain Komunikasi Visual (S1)</option>
+                        <option>Rekayasa Perangkat Lunak (D3)</option>
+                        <option>Sistem Informasi Akuntansi (D3)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" placeholder="Masukan Nomor Telepon" required>
+                </div>
+                <div class="input-box">
+                    <label for="dob">Tanggal Lahir</label>
+                    <input type="date" id="dob" placeholder="Masukan Tanggal Lahir" required>
+                </div>
+            </div>
+
+            <div class="gender">
+                <h3>Jenis Kelamin</h3>
+                <div class="gender-option">
+                    <div class="gdr">
+                        <input type="radio" id="laki-laki" name="gender" required>
+                        <label for="laki-laki">Laki-Laki</label>
+                    </div>
+                    <div class="gdr">
+                        <input type="radio" id="perempuan" name="gender" required>
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-box address">
+                <label for="provinsi">Alamat</label>
+                <input type="text" id="provinsi" placeholder="Masukan Nama Jalan" required>
+                <div class="column">
+                    <input type="text" placeholder="Nama Kelurahan" required>
+                    </div>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="kabupaten" required>
+                            <option hidden>Kecamatan</option>
+                            <option>Batuceper</option>
+                            <option>Benda</option>
+                            <option>Cibodas</option>
+                            <option>Ciledug</option>
+                            <option>Cipondoh</option>
+                            <option>Jatiuwung</option>
+                            <option>Karang Tengah</option>
+                            <option>Karawaci</option>
+                            <option>Larangan</option>
+                            <option>Neglasari</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="kabupaten" required>
+                            <option hidden>Kabupaten/Kota</option>
+                            <option>Kota Tangerang</option>
+                            <option>Kota Tangerang Selatan</option>
+                            <option>Kota Cilegon</option>
+                            <option>Kota Serang</option>
+                            <option>Kabupaten Lebak</option>
+                            <option>Kabupaten Pandeglang</option>
+                            <option>Jakarta Barat</option>
+                            <option>Jakarta Pusat</option>
+                            <option>Jakarta Selatan</option>
+                            <option>Jakarta Timur</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="kabupaten" required>
+                            <option hidden>Provinsi</option>
+                            <option>DKI Jakarta</option>
+                            <option>Banten</option>
+                            <option>Jawa Tengah</option>
+                            <option>Daerah Istimewah Yogyakarta</option>
+                            <option>Jawa Barat</option>
+                            <option>Jawa Timur</option>
+                            <option>Kalimantan Barat</option>
+                            <option>Kalimantan Timur</option>
+                            <option>Kalimantan Selatan</option>
+                            <option>Kalimantan Tengah</option>
+                        </select>
+                        </div>
+                    <input type="text" placeholder="Masukan Kode Pos" required>
+                </div>
+            </div>
+                 </div>
+                 </div>
+            <div class="input-box password">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Masukan Password" required>
+                <span class="show-btn" id="show-password-btn" onclick="togglePassword()">&#128064;</span>
+            </div>
+            <div class="input-box password">
+                <br><label for="confirm-password">Konfirmasi Password</label>
+                <input type="password" id="confirm-password" placeholder="Ulangi Password" required>
+            </div>
+            <div class="column">
+                <button type="submit">Daftar</button>
+                <button type="button" onclick="window.location.href='index.html';">Kembali</button>
+            </div>
+            
+        </form>
+    </section>
+</body>
+</html>
